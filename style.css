@@ -1,0 +1,803 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Ajoutez ce style pour l'image de fond pour toutes les sections */
+.section {
+    background: url('images/1695645929298.jpg') no-repeat center center;
+    background-size: cover;
+    color: white; /* Change la couleur du texte pour qu'il soit visible sur l'image */
+    position: relative;
+    z-index: 1;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajoute un overlay sombre pour améliorer la lisibilité du texte */
+    z-index: -1;
+}
+
+/* Section avec padding et marges */
+.section {
+    padding: 60px 0;
+}
+
+/* Style de base pour la section "À propos de moi" */
+#about {
+    min-height: 100vh; /* Définit une hauteur minimale pour voir plus de l'image */
+    padding: 100px 0; /* Augmente le padding pour plus de hauteur */
+}
+
+/* Animation de texte */
+#about .container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    padding: 100px 0;
+}
+
+/* Classe ajoutée lors de l'animation */
+#about.visible .container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style personnalisé pour le titre et le texte de la section "À propos de moi" */
+#about .display-4 {
+    font-size: 3rem; /* Taille de police plus grande */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 10px; /* Marge en bas */
+    margin-top: 100px;
+}
+
+#about .lead {
+    font-size: 1.5rem; /* Taille de police plus grande */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Marge en haut */
+    font-style: italic; /* Texte en italique */
+}
+
+/* Autres styles existants */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    transition: background-color 0.5s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    transition: color 0.5s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+}
+
+/* Style de la timeline */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* ligne*/
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.5rem;
+    width: 4px;
+    background: #212222; /* Couleur principale de Bootstrap */
+    border-radius: 2px;
+}
+
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #fff;
+    border: 4px solid #424446;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    flex-shrink: 0;
+    color: #007bff; /* Primary color for icons */
+    background: rgba(0, 123, 255, 0.1);
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    color: #007bff; /* Same primary color for icon */
+}
+
+.ml-4 {
+    margin-left: 20px;
+}
+
+.timeline-item h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.timeline-item p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.timeline-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.timeline-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+
+    .ml-4 {
+        margin-left: 15px;
+    }
+
+    .icon {
+        padding: 10px;
+    }
+
+    .timeline-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+footer {
+    background-color: #343a40;
+}
+
+/* Scroll animations */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom navbar styles */
+.custom-navbar {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Transparent background */
+    height: 80px; /* Increase height */
+    line-height: 80px; /* Center items vertically */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Center navbar brand */
+.navbar-brand {
+    margin: auto;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif; /* Apply custom font */
+    font-weight: 700;
+}
+
+/* Conteneur de l'icône */
+.navbar-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Icône LinkedIn */
+.linkedin-icon {
+    font-size: 1.5rem; /* Ajustez la taille de l'icône */
+    color: #595a63; /* Couleur LinkedIn */
+    margin-left: 1rem; /* Espacement à gauche de l'icône pour séparer du reste du contenu */
+}
+
+/* Style de base pour la section d'expérience */
+#experience {
+    padding: 80px 0;
+    background-color: #f0f0f0;; /* Couleur de fond douce pour la section */
+}
+
+/* Titre de la section */
+#experience .display-4 {
+    font-size: 2.5rem; /* Ajustez la taille selon vos besoins */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #5e5959; /* Couleur du texte */
+}
+
+/* Conteneur pour les cartes d'expérience */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptation des colonnes */
+    gap: 20px; /* Espace entre les cartes */
+    justify-content: center; /* Centre les cartes horizontalement */
+}
+
+
+.experience-card h3 {
+    font-size: 1.5rem; /* Taille de police pour le titre */
+    margin-bottom: 10px; /* Marge inférieure */
+    color: #333; /* Couleur du texte */
+}
+
+.experience-card p {
+    font-size: 1rem; /* Taille de police pour la description */
+    color: #666; /* Couleur du texte */
+    margin-bottom: 15px; /* Marge inférieure pour séparer du contenu suivant */
+}
+
+.experience-card ul {
+    list-style: none; /* Supprime les puces par défaut */
+    padding-left: 0; /* Supprime l'espacement par défaut */
+}
+
+.experience-card ul li {
+    position: relative;
+    padding-left: 25px; /* Espace pour les icônes */
+    margin-bottom: 10px;
+}
+
+.experience-card ul li::before {
+    content: '\f111'; /* Unicode de l'icône Font Awesome (un cercle plein) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem; /* Taille de l'icône */
+    color: #007bff; /* Couleur de l'icône */
+}
+
+
+/* Effet au survol des cartes */
+.experience-card:hover {
+    transform: translateY(-10px); /* Décalage vertical */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
+}
+
+/* Styles de base */
+.section {
+    padding: 60px 0;
+}
+
+h2.display-4 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Styles des cartes de formation */
+.education-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 30px;
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow effect */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Slightly slower transition */
+    background-color: #fff; /* Background color for a clean look */
+}
+
+.education-card:hover {
+    transform: translateY(-12px); /* Slightly higher lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.image-container {
+    width: 100%;
+    height: 280px; /* Slightly smaller height */
+    overflow: hidden;
+    border-bottom: 4px solid #007bff; /* Adding a border to separate image from text */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+    filter: grayscale(0%); /* Starting with a colored image */
+}
+
+.education-card:hover .image-container img {
+    transform: scale(1.15); /* Slightly more zoom on hover */
+    filter: grayscale(20%); /* Adding a slight grayscale effect on hover */
+}
+
+.education-text {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Slightly darker overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.4s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.95; /* Slight transparency for the overlay */
+    backdrop-filter: blur(5px); /* Adding a blur effect for a modern look */
+}
+
+.education-card:hover .education-text {
+    bottom: 0;
+}
+
+.education-text h5 {
+    font-size: 1.6rem; /* Slightly larger font size */
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 1.2px; /* Adding spacing between letters */
+    color: #f0f0f0;
+}
+
+.education-text p {
+    font-size: 1.1rem; /* Slightly larger paragraph font */
+    color: #dcdcdc; /* Softer color for the text */
+}
+
+.education-text p span {
+    font-style: italic; /* Adding italic style for emphasis */
+    color: #f0ad4e; /* Highlighting important parts with a different color */
+}
+
+/* Styles de base */
+.section {
+    padding: 70px 0; /* More padding for spacious feel */
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+h2.display-4 {
+    font-size: 3.5rem; /* Larger headline */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #212529; /* Darker color for headline */
+    text-transform: uppercase; /* Capitalize for a modern look */
+    letter-spacing: 2px; /* Increased letter-spacing for style */
+    position: relative;
+}
+
+h2.display-4::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background-color: #007bff;
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+
+/* Styles des cartes de compétences */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 30px;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    background: white;
+    height: 200px; /* Hauteur uniforme pour toutes les cartes */
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Effet de transition */
+}
+
+.skill-logo {
+    max-width: 80%; /* Limite la largeur maximale du logo */
+    max-height: 80%; /* Limite la hauteur maximale du logo */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover .skill-logo {
+    transform: scale(1.1); /* Agrandissement du logo au survol */
+}
+
+/* Banderole noire avec texte */
+.skill-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Banderole noire avec transparence */
+    padding: 10px;
+    text-align: center;
+    transform: translateY(100%); /* Masque la banderole en dessous de la carte */
+    transition: transform 0.3s ease-in-out; /* Transition douce */
+}
+
+.skill-card:hover .skill-banner {
+    transform: translateY(0); /* Remonte la banderole au survol */
+}
+
+.skill-text {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 1; /* Toujours visible sur la banderole */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skill-card:hover .skill-text {
+    opacity: 1; /* Garde le texte visible avec la banderole */
+}
+
+.comp_section {
+    background-color: #f0f0f0;
+}
+
+/* Style du titre "Compétences" */
+h2.display-4 {
+    font-family: 'Roboto', sans-serif; /* Police Google Roboto */
+    font-size: 3.5rem; /* Taille de la police plus grande */
+    font-weight: 700; /* Texte en gras */
+    text-align: center; /* Centrage du texte */
+    margin-bottom: 50px; /* Marge en bas */
+    color: #333; /* Couleur du texte */
+    text-transform: uppercase; /* Met le texte en majuscules */
+    letter-spacing: 2px; /* Espacement des lettres */
+    background: linear-gradient(to right, #1d1c1c, #a09f9f); /* Dégradé de couleurs */
+    -webkit-background-clip: text; /* Applique le dégradé au texte */
+    color: transparent; /* Rend le texte transparent pour voir le dégradé */
+}
+
+
+
+.experience-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.experience-card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.experience-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.experience-card h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #343a40;
+}
+
+.experience-card p {
+    color: #6c757d;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.experience-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #495057;
+}
+
+.experience-card li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.experience-card li:before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, rgba(0, 123, 255, 0.3), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 15px;
+    }
+
+    .experience-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .experience-card p {
+        font-size: 1rem;
+    }
+
+    .experience-card li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Style pour le fond de la section */
+#contact {
+    background-color: #f8f9fa;
+}
+
+.bg-blue-gradient {
+    background: linear-gradient(135deg, #007bff, #007bff);
+    color: white;
+    border-radius: 10px;
+}
+
+.bg-white {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+}
+
+.list-unstyled i {
+    color: #ffffff;
+}
+
+.form-control {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-download {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.btn-download:hover {
+    background-color: #218838;
+    text-decoration: none;
+}
+
+.form-row .form-control {
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .bg-blue-gradient, .bg-white {
+        border-radius: 0;
+    }
+}
+
+/* Styles de base pour le footer */
+.footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Conteneur du footer */
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Styles pour le texte du footer */
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Conteneur des icônes sociales */
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+/* Icônes sociales */
+.footer-social-icons .social-icon {
+    font-size: 1.5rem;
+    color: #f8f9fa; /* Couleur par défaut des icônes */
+    margin: 0 15px; /* Espacement entre les icônes */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Couleurs spécifiques pour les icônes */
+.linkedin-icon {
+    color: #0077b5; /* Couleur LinkedIn */
+}
+
+.gmail-icon {
+    color: #d44638; /* Couleur Gmail */
+}
+
+.github-icon {
+    color: #333; /* Couleur GitHub */
+}
+
+/* Effet de survol pour les icônes */
+.social-icon:hover {
+    color: #007bff; /* Couleur au survol */
+    transform: scale(1.1); /* Agrandissement léger au survol */
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur des icônes */
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; /* Caché par défaut */
+    z-index: 1000; /* Pour s'assurer que le bouton est au-dessus du contenu */
+    opacity: 90%;
+}
+
+/* Afficher le bouton lorsque l'utilisateur fait défiler la page */
+.scroll-to-top.show {
+    display: block;
+}
+
+/* Effet de survol pour le bouton */
+.scroll-to-top:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+    transform: scale(1.1); /* Agrandissement léger au survol */
+}
+
+/* Responsive Design pour le footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-social-icons {
+        margin-top: 15px;
+    }
+
+    .footer-social-icons .social-icon {
+        font-size: 1.3rem;
+        margin: 0 10px;
+    }
+}
+
+/* Section Projets */
+#projects {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Couleur de fond douce pour la section */
+    text-align: center; /* Centrer le contenu */
+}
+
+/* Titre de la section Projets */
+#projects .display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #5e5959; /* Couleur du texte */
+}
+
+/* Icône de dossier */
+.folder-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.folder-icon a {
+    text-decoration: none;
+}
+
+.folder-icon i {
+    font-size: 6rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+/* Texte sous l'icône */
+.folder-icon p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Effet de survol sur l'icône de dossier */
+.folder-icon a:hover i {
+    color: #0056b3;
+}

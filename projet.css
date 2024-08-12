@@ -1,0 +1,166 @@
+/* Section Projets */
+#project-list {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Titre de la section Projets */
+#project-list .display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #5e5959;
+}
+
+/* Grille de projets */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de zoom sur les cartes de projet */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de base pour les icônes */
+.project-card .icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transition pour l'animation */
+}
+
+/* Effet de zoom sur l'icône des projets */
+.project-card:hover .icon {
+    transform: scale(1.2); /* Agrandissement de l'icône */
+    color: #0056b3; /* Changer la couleur de l'icône au survol */
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.project-card .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Section Téléchargements */
+.download-section {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.download-section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.download-list {
+    list-style: none;
+    padding: 0;
+}
+
+.download-list li {
+    margin-bottom: 15px;
+}
+
+.download-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.download-list a:hover {
+    color: #0056b3;
+}
+
+.download-list i {
+    margin-right: 10px;
+}
+
+/* Styles de base pour le footer */
+.footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Conteneur du footer */
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Styles pour le texte du footer */
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Conteneur des icônes sociales */
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+/* Icônes sociales */
+.footer-social-icons .social-icon {
+    font-size: 1.5rem;
+    color: #f8f9fa; /* Couleur par défaut des icônes */
+    margin: 0 15px; /* Espacement entre les icônes */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Couleurs spécifiques pour les icônes */
+.linkedin-icon {
+    color: #0077b5; /* Couleur LinkedIn */
+}
+
+.gmail-icon {
+    color: #d44638; /* Couleur Gmail */
+}
+
+.github-icon {
+    color: #333; /* Couleur GitHub */
+}
+
+/* Effet de survol pour les icônes sociales */
+.social-icon:hover {
+    color: #007bff; /* Couleur au survol */
+    transform: scale(1.2); /* Agrandissement léger au survol */
+}
+
