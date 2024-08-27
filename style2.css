@@ -1,0 +1,228 @@
+/* Styles globaux pour le corps et le html */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: #87CEEB; /* Couleur du ciel pour contraste */
+    font-family: Arial, sans-serif;
+}
+
+/* Styles pour les flèches de navigation */
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    z-index: 10; /* S'assurer que la flèche est au-dessus de tout le reste */
+    user-select: none;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    color: #FFD700; /* Changer de couleur au survol */
+}
+
+/* Styles pour le canvas de la simulation */
+#waterCanvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #a0c4ff; /* Couleur de l'eau ou fond de canvas */
+}
+
+/* Styles pour les panneaux */
+.panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    z-index: 10;
+    display: none; /* Cacher les panneaux par défaut */
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition pour l'apparition/disparition */
+}
+
+.panel-left {
+    left: 0;
+    transform: translateX(-100%); /* Cache le panneau à gauche */
+}
+
+.panel-right {
+    right: 0;
+    transform: translateX(100%); /* Cache le panneau à droite */
+}
+
+/* Styles pour les en-têtes et les groupes de contrôles */
+.panel h2 {
+    margin-top: 0;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: #87CEEB; /* Couleur du ciel pour contraste */
+    font-family: Arial, sans-serif;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    z-index: 10; /* S'assurer que la flèche est au-dessus de tout le reste */
+    user-select: none;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    color: #FFD700; /* Changer de couleur au survol */
+}
+/* Styles pour le menu déroulant */
+.side-menu {
+    position: fixed;
+    right: -400px; /* Initialement caché hors de l'écran */
+    top: 0;
+    width: 650px; /* Augmenter la largeur du menu */
+    height: 100%;
+    background-color: #333;
+    overflow-y: auto; /* Permettre le défilement vertical */
+    overflow-x: auto; /* Permettre le défilement horizontal */
+    transform: translateX(100%);
+    color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.3s ease; /* Transition fluide pour l'animation */
+    z-index: 20;
+    opacity: 80%;
+}
+
+.side-menu.show {
+    right: 0; /* Afficher le menu */
+    transform: translateX(0);
+}
+
+.side-menu h2 {
+    margin-top: 0;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+    width: 800px; /* Largeur plus grande pour activer le défilement horizontal */
+}
+
+.side-menu ul li {
+    margin: 15px 0;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    color: #FFD700; /* Changer la couleur des liens au survol */
+}
+
+/* Styles pour afficher le menu lorsqu'on passe la souris */
+.side-menu.show {
+    right: 0; /* Afficher le menu */
+}
+
+
+/* Styles pour le menu déroulant à gauche */
+.side-menu-left {
+    position: fixed;
+    left: -300px; /* Initialement caché hors de l'écran */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    transition: left 0.3s ease; /* Transition fluide pour l'animation */
+    z-index: 20;
+    opacity: 80%;
+}
+
+.side-menu-left h2 {
+    margin-top: 0;
+}
+
+.side-menu-left label {
+    display: block;
+    margin-top: 10px;
+}
+
+.side-menu-left input[type="range"] {
+    width: 100%;
+}
+
+.side-menu-left input[type="color"] {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+}
+/* Styles pour afficher les menus lorsqu'on passe la souris */
+.side-menu-left.show {
+    left: 0; /* Afficher le menu */
+}
