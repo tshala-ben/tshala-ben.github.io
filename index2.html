@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation d'Eau Réaliste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arrow-left" id="arrowLeft">&#9664;</div> <!-- Flèche gauche -->
+    <div class="arrow-right" id="arrowRight">&#9654;</div> <!-- Flèche droite -->
+
+    <!-- Menu déroulant -->
+    <div id="sideMenu" class="side-menu">
+        <h2>Explication du Code</h2>
+        <div class="menu-section">
+            <h3>1. Initialisation du Canvas</h3>
+            <img src="images/canvas.png" alt="Initialisation du Canvas" class="menu-image">
+            <p>Le canvas est créé et son contexte est défini pour permettre le dessin des animations.</p>
+        </div>
+        <div class="menu-section">
+            <h3>2. Animation des Vagues</h3>
+            <img src="images/vague.png" alt="Animation des Vagues" class="menu-image">
+            <p>Les vagues sont animées en ajustant leur phase et leur fréquence pour créer un effet de mouvement.</p>
+        </div>
+        <div class="menu-section">
+            <h3>3. Cycle Jour/Nuit</h3>
+            <img src="images/jour.png" alt="Cycle Jour/Nuit" class="menu-image">
+            <p>Le cycle jour/nuit change la couleur du ciel et affiche les étoiles en fonction de l'heure du jour.</p>
+        </div>
+        <div class="menu-section">
+            <h3>4. Contrôles de Simulation</h3>
+            <img src="images/control.png" alt="Contrôles de Simulation" class="menu-image">
+            <p>Les contrôles permettent de modifier la vitesse des vagues, l'amplitude, le nombre d'étoiles et la couleur du ciel.</p>
+        </div>
+    </div>
+
+      <!-- Menu déroulant à gauche -->
+      <div class="side-menu-left" id="sideMenuLeft">
+        <h2>Paramètres</h2>
+        <label for="waveSpeed">Vitesse des vagues:</label>
+        <input type="range" id="waveSpeed" min="0.01" max="0.1" step="0.01" value="0.02">
+        <br>
+        <label for="waveAmplitude">Amplitude des vagues:</label>
+        <input type="range" id="waveAmplitude" min="10" max="50" step="1" value="20">
+        <br>
+        <label for="starCount">Quantité d'étoiles:</label>
+        <input type="range" id="starCount" min="50" max="200" step="10" value="100">
+        <br>
+    </div>
+
+    <canvas id="waterCanvas"></canvas>
+    <script src="fluid_simulation.js"></script>
+</body>
+</html>
