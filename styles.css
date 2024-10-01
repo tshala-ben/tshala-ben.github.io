@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Un fond sombre pour un style moderne */
+}
+
+canvas {
+    display: block;
+}
+
+#info-panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Change to column to stack elements */
+    gap: 10px;
+}
+
+button, input[type="checkbox"] + label {
+    background-color: #1e88e5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button:hover, input[type="checkbox"] + label:hover {
+    background-color: #1565c0; /* Changement de couleur au survol */
+}
+
+label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#toggleLabels {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #43a047; /* Changement de couleur si coché */
+}
+
+#labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Pour permettre l'interaction avec la scène */
+}
+
+.label {
+    position: absolute;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.info-box {
+    position: absolute;
+    top: 100px; /* Ajusté pour placer la boîte sous le panneau */
+    left: 10px;
+    background: rgba(33, 33, 33, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 250px;
+    text-align: center;
+    display: none; /* Par défaut, la boîte d'information est cachée */
+    z-index: 10;
+}
+
+.info-box h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffcc00;
+}
+
+.info-box p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #ffcc00;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #ff5500;
+}
+
+.nav-button {
+    background-color: #1e88e5;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: #1565c0;
+}
+
+#planet-info {
+    position: fixed;
+    top: 50%; /* Centrer verticalement */
+    right: 500px; /* Centrer */
+    transform: translateY(-50%); /* Ajustement pour le centrage vertical */
+    background: rgba(33, 33, 33, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    display: none; /* Par défaut, la boîte d'information est cachée */
+    z-index: 10;
+}
+
